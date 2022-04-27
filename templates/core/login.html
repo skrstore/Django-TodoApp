@@ -1,0 +1,27 @@
+{% extends "core/layout.html" %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<h1>Login Page</h1>
+<div>
+    <form action="" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" class="form-control" name="email" id="email">
+        </div>
+        <div class="form-group">
+            <label for="password">Passowrd</label>
+            <input type="password" class="form-control" name="password" id="password">
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Login" class="btn btn-primary">
+        </div>
+    </form>
+    <div>
+        <p>Do not have a account <a href="/register">Register here</a></p>
+    </div>
+</div>
+
+{% endblock %}

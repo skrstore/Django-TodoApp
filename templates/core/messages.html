@@ -1,0 +1,32 @@
+<style>
+  .messageContainer{
+      z-index: 100;
+      opacity: .85;
+      position: fixed; 
+      left: 50%;
+      top: 1em;
+  }
+  .messageContainer > div{
+      position: relative; 
+      left: -50%;
+      box-shadow: 0 0 5px rgba(0, 128, 0, 0.349); 
+  }
+</style>
+<div class="messageContainer">
+  {% if messages %}
+      {% for message in messages %}
+          <div class="alert alert{{forloop.counter}} alert-success alert-dismissible fade show" role="alert">
+              {{message}}
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+              <script>
+                  setTimeout(()=>{
+                      $('.alert{{forloop.counter}}').alert('close')
+                  }, 2000)
+              </script>
+          </div>
+      {% endfor %}
+  {% endif %}
+</div>
+

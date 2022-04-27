@@ -1,0 +1,35 @@
+{% extends "core/layout.html" %}
+
+{% block title %}Register{% endblock %}
+
+{% block content %}
+<h1>Register Page</h1>
+<div>
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" name="name" id="name">
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" class="form-control" name="email" id="email">
+        </div>
+        <div class="form-group">
+            <label for="pic_path">Profile Picture</label>
+            <input type="file" class="form-control-file" id="pic_path" name="pic_path">
+        </div>
+        <div class="form-group">
+            <label for="password">Passowrd</label>
+            <input type="password" class="form-control" name="password" id="password">
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Register" class="btn btn-primary">
+        </div>
+    </form>
+    <div>
+        <p>Already have a account <a href="/login">Login here</a></p>
+    </div>
+</div>
+
+{% endblock %}

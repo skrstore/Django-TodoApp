@@ -1,0 +1,36 @@
+{% extends "core/layout.html" %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<h1>Dashboard</h1>
+
+<hr>
+<div class="row">
+    <div class="col-4 d-flex align-items-center">
+        PIC
+        {# <img src="{{ user.pic_path.url }}" class="img-fluid rounded" alt="User Profile Image"> #}
+    </div>
+    <div class="col-8 mt-5">
+        <p><b>Name :</b> {{user.name}}</p>
+        <p><b>Email :</b> {{user.email}}</p>
+        <p><b>Password :</b> {{user.password}}</p>
+        <div class="col-12 mt-5">
+            <p class="text-center d-flex justify-content-around">
+                <a href="/new" class="btn btn-primary">Add Note</a>
+                <a href="/notes" class="btn btn-primary">Show Notes</a>
+            </p>
+        </div>
+    </div>
+    <div class="col-12 mt-5">
+        <div class="row mt-5 text-center">
+            <div class="col-6">
+                <a href="/update" class="btn btn-lg btn-primary">Update Details</a>
+            </div>
+            <div class="col-6">
+                <a href="/delete" class="btn btn-lg btn-danger">Delete Account</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

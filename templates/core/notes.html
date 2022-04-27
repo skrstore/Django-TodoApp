@@ -1,0 +1,41 @@
+{% extends "core/layout.html" %}
+{% block title %}All Notes{% endblock %}
+
+{% block content %}
+
+<div class="row mb-5">
+    <h1 class="col-8">All Notes List</h1>
+    
+    <p class="col-4">
+        <a href="/new" class="btn btn-primary">Add New Note</a>
+    </p>
+</div>
+
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>Note</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for note in notes %}
+                <tr>
+                    <td>{{forloop.counter}}</td>
+                    <td>{{note.note}}</td>
+                    <td>
+                        <a href="/note/update/{{note.id}}" class="btn btn-primary">Update</a>
+                    </td>
+                    <td>
+                        <a href="/note/delete/{{note.id}}" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

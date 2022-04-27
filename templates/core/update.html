@@ -1,0 +1,31 @@
+{% extends "core/layout.html" %}
+
+{% block title %}Update{% endblock %}
+
+{% block content %}
+<h1>Update Detail</h1>
+<div class="container mt-5">
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" name="name" value="{{user.name}}" id="name">
+        </div>
+        <hr>
+        <div class="form-group row">
+            <div class="col-6">
+                <b>Old Profile Image :</b>
+                <img src="{{user.pic_path.url}}" class="img-fluid rounded" width="100" alt="Old Profile Image">
+            </div>
+            <div class="col-6">
+                <label for="pic_path"><b>Choose New Profile :</b></label>
+                <input type="file" class="form-control-file" id="pic_path" name="pic_path">
+            </div>
+        </div>
+        <div class="form-group mt-5 text-center">
+            <input type="submit" value="Update" class="btn btn-primary">
+        </div>
+    </form>
+</div>
+
+{% endblock %}

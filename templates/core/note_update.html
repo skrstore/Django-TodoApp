@@ -1,0 +1,22 @@
+{% extends "core/layout.html" %}
+{% block title %}Update Note{% endblock %}
+
+{% block content %}
+
+<h1>Update Note</h1>
+<br>
+<div class="container">
+    <form action="" method="post">
+        {% csrf_token %}
+        <div class="row">
+            <label for="note" class="col-4">Update Note : </label>
+            <textarea class="col-8" name="note" cols="30" rows="10" id="note">{{note.note}}</textarea>
+        </div>
+        <br>
+        <p>
+            <input type="submit" value="Update Note" class="btn btn-primary">
+        </p>
+    </form>
+</div>
+
+{% endblock %}
