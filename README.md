@@ -12,7 +12,7 @@ pip install -r requirements.txt
 
 # Application Setup
 python manage.py migrate
-python manage.py createsuperusre
+python manage.py createsuperuser
 
 # Run the Application
 python manage.py runserver
